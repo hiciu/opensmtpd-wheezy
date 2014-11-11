@@ -10,4 +10,4 @@ RUN apt-get build-dep -y opensmtpd
 
 VOLUME /srv/deb
 WORKDIR /srv/deb
-ENTRYPOINT [ "/usr/bin/apt-get source opensmtpd --compile" ]
+ENTRYPOINT [ "/usr/bin/apt-get", "source", "opensmtpd", "--compile" ]
