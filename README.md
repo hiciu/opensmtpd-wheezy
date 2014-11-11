@@ -8,8 +8,32 @@ The brilliant [OpenSMTPD](http://opensmtpd.org) is currently not available
 Run this:
 
 ```
-docker build victorklos/opensmtpd-wheezy
-docker run -v $PWD/deb:/srv/deb victorklos/opensmtpd-wheezy
+docker pull victorklos/opensmtpd-wheezy
+tmpdeb=`mktemp -d`
+docker run -v $tmpdeb:/srv/deb victorklos/opensmtpd-wheezy
+cd $tmpdeb
 ```
 
-Now look in the `deb` folder. Be happy.
+Do `ls`. Be happy.
+
+
+## For developers/DIY
+
+Run this:
+
+```
+git clone git@github.com:victorklos/opensmtpd-wheezy.git
+docker build -t="victorklos/opensmtpd-wheezy" .
+```
+
+And run as above.
+
+## Installing the .deb
+
+First install libevent, then install the package:
+
+```
+apt-get install libevent-2.0
+dpkg -i opensmtpd_xyz_amd64.deb
+```
+
