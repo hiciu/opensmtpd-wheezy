@@ -1,4 +1,0 @@
-# jessie
-Package: *
-Pin: release a=jessie
-Pin-Priority: 100

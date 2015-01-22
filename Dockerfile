@@ -2,8 +2,8 @@ FROM debian:wheezy
 
 MAINTAINER Victor Klos "victor@victorklos.nl"
 
-ADD apt/jessie.list /etc/apt/sources.list.d/jessie.list
-ADD apt/jessie /etc/apt/preferences.d/jessie
+ADD apt/unstable.list /etc/apt/sources.list.d/unstable.list
+ADD apt/unstable /etc/apt/preferences.d/unstable
 RUN apt-get update
 RUN apt-get install -y dpkg-dev
 RUN apt-get build-dep -y opensmtpd
